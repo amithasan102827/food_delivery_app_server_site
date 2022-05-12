@@ -68,6 +68,12 @@ async function run() {
             const cars = await cursor.toArray();
             res.send(cars)
         })
+        // get users
+        app.get('/users', async (req, res) => {
+            const cursor = userCollection.find({})
+            const cars = await cursor.toArray();
+            res.send(cars)
+        })
 
 
         // Add new blog
@@ -139,13 +145,7 @@ async function run() {
             res.json(result);
         })
 
-        // // get single order by  id
-        // app.get('/orders/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) }
-        //     const result = await ordersCollection.findOne(query);
-        //     res.json(result);
-        // })
+      
 
        
 
